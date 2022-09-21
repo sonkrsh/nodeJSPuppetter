@@ -1,5 +1,5 @@
 const express = require("express");
-const puppeteer = require("puppeteer-core");
+// const puppeteer = require("puppeteer-core");
 const chromium = require("chrome-aws-lambda");
 const app = express();
 const port = process.env.PORT || 3001;
@@ -13,7 +13,7 @@ app.get("/", async (req, res) => {
     ignoreHTTPSErrors: true,
   };
 
-  const browser = await puppeteer.launch(launchOptions);
+  const browser = await chromium.puppeteer.launch(launchOptions);
   const page = await browser.newPage();
   await page.goto("https://google.com");
   const title = await page.title();
