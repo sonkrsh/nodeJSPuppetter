@@ -13,6 +13,9 @@ app.get("/", async (req, res) => {
 
   await page.goto("https://google.com");
   const title = await page.title();
+  setTimeout(function () {
+    console.log("NEwwww");
+  }, 2);
   console.log("Page Title : " + title);
   res.send(`hello + ${title}`);
 });
