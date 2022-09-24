@@ -15,7 +15,7 @@ app.get("/", async (req, res) => {
   const title = await page.title();
   setTimeout(function () {
     console.log("NEwwww");
-  }, 2);
+  }, 20000);
   console.log("Page Title : " + title);
   res.send(`hello + ${title}`);
 });
